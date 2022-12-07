@@ -7,11 +7,13 @@ interface argTypes {
   size: string;
 }
 
+const initialValues: argTypes = {
+  prompt: "",
+  size: "",
+};
+
 export default function PrimaryScreen() {
-  const [values, setValues] = useState<argTypes>({
-    prompt: "",
-    size: "",
-  });
+  const [values, setValues] = useState(initialValues);
   const [image, setImage] = useState<string>("");
   const [error, setError] = useState<boolean | null>(null);
   const [message, setMessage] = useState<string | null>(null);
@@ -28,7 +30,9 @@ export default function PrimaryScreen() {
     e.preventDefault();
 
     setError(null);
+    setMessage(null);
     setLoading(true);
+    setValues(initialValues);
 
     const imageData = {
       prompt: values.prompt,
@@ -48,7 +52,7 @@ export default function PrimaryScreen() {
     } catch (error: any) {
       setLoading(false);
       setError(error?.response.data.message);
-      setTimeout(() => setError(null), 10000);
+      setTimeout(() => setError(null), 12000);
     }
   };
 
