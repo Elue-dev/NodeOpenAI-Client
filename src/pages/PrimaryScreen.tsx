@@ -14,6 +14,7 @@ export default function PrimaryScreen() {
   });
   const [image, setImage] = useState<string>("");
   const [error, setError] = useState<boolean | null>(null);
+  const [message, setMessage] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleInputChange = (e: any) => {
@@ -42,6 +43,8 @@ export default function PrimaryScreen() {
 
       setImage(data?.data);
       setLoading(false);
+      setMessage("Your image is ready!!");
+      setTimeout(() => setError(null), 10000);
     } catch (error: any) {
       setLoading(false);
       setError(error?.response.data.message);
@@ -84,6 +87,7 @@ export default function PrimaryScreen() {
 
       <main>
         {error && <p className="error">{error}</p>}
+        {message && <p className="message">{message}</p>}
         <section className="showcase">
           <form onSubmit={generateImage}>
             <h1>Describe An Image</h1>

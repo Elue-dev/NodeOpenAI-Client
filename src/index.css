@@ -117,6 +117,12 @@ form select {
   text-align: center;
 }
 
+.error {
+  background: rgb(192, 255, 224);
+  color: green;
+  text-align: center;
+}
+
 form button {
   font-size: 20px;
   padding: 1rem 2rem;
