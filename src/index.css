@@ -150,3 +150,22 @@ img {
   text-align: center;
   margin-top: 1rem;
 }
+
+@media (max-width: 600px) {
+  .navbar .logo h2 {
+    font-size: 1rem;
+  }
+
+  .navbar a {
+    display: none;
+  }
+
+  .showcase h1 {
+    font-size: 1.7rem;
+  }
+
+  .showcase form input,
+  .showcase form select {
+    width: 300px;
+  }
+}
