@@ -44,7 +44,7 @@ export default function PrimaryScreen() {
       setImage(data?.data);
       setLoading(false);
       setMessage("Your image is ready!!");
-      setTimeout(() => setError(null), 10000);
+      setTimeout(() => setMessage(null), 10000);
     } catch (error: any) {
       setLoading(false);
       setError(error?.response.data.message);

@@ -117,7 +117,7 @@ form select {
   text-align: center;
 }
 
-.error {
+.message {
   background: rgb(192, 255, 224);
   color: green;
   text-align: center;
